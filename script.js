@@ -4,7 +4,7 @@ const emailInput = form.elements.email;
 const telInput = form.elements.tel;
 const urlInput = form.elements.url;
 
-const regexName = /[А-Я]{1}[а-яё]+/;
+const regexName = /(^[А-Я]{1}[а-яё]+|^[А-Я]{1}[а-яё]+\-^[А-Я]{1}[а-яё]+)/;
 const regexNEmail = /\w{2,}@[A-Z]+[a-z]+\.[A-Z]+[a-z]{2}]/;
 const regexTel = /\+?\d{1}\(\d{3}\)\s?\-?\d{3}\s?\-?\d{2}\s?\-?\d{2}/;
 const regexUrl = /(http\:\/{1}\/{1}|https\:\/{1}\/{1})w{0,3}\.?\:?\d{0,5}(\d{3}\.\d{3}\.\d{3}\.\d{3}|stasbasov\.ru)\#?/;
