@@ -1,0 +1,6 @@
+# игнорировать все файлы
+validation
+.DS_Store
+cover.jpg
+logo.svg
+validation.zip
