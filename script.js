@@ -62,5 +62,3 @@ urlInput.addEventListener('input', event => {
         }
         return matchRegExp();
 });
-
-// const match = matchRegExp();
