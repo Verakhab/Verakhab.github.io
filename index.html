@@ -23,19 +23,21 @@
                         <input class="form__input" 
                         type="text" 
                         name="name" 
-                        pattern="" 
+                        pattern="/^([А-Я][а-яё]+)(-)?([А-Я]?[а-яё]*)?$/" 
                         placeholder="Имя" 
                         minlength="2"
                         maxlength="20" 
-                        required />
+                        required
+                        />
                         <span class="form__error">Имя в формате: "Леонид"</span>
                     </div>
                     <div class="form__field">
                         <input class="form__input" 
                         type="email" 
                         name="email" 
-                        pattern="" 
-                        placeholder="E-Mail" />
+                        pattern="/^([\dA-Za-z\.-]{2,})+@([A-Za-z\.-]{2,})+\.([A-Za-z]{2,6})$/" 
+                        placeholder="E-Mail"
+                        />
                         <span class="form__error">e-mail в формате: sega@yandex.ru</span>
                     </div>
                     <div class="form__field">
@@ -43,17 +45,19 @@
                         type="tel" 
                         name="tel" 
                         placeholder="Телефон" 
-                        pattern="" 
-                        minlength="" 
-                        maxlength="" />
+                        pattern="/^(\+)?(\d)\s?(\()?(\d{3})(\))?\s?-?(\d{3})\s?-?(\d{2})\s?-?(\d{2})$/" 
+                        minlength="11" 
+                        maxlength="22"
+                        />
                         <span class="form__error">телефон в формате: +7 (123) 456-78-90</span>
                     </div>
                     <div class="form__field">
                         <input class="form__input" 
                         type="url" 
                         name="url" 
-                        pattern="" 
-                        placeholder="Ваш сайт" />
+                        pattern="/^(http(s)?:\/\/)(w{3}\.)?(\d*\.\d*\.\d*\.\d*)?(([A-Za-z\.-]{2,})\.([A-Za-z]{2,6}))?(:\d{2,5})?\/?([\dA-Za-z\/]+#?)?$/" 
+                        placeholder="Ваш сайт"
+                        />
                         <span class="form__error">URL в формате: http://mysite.ru</span>
                     </div>
                     <button class="form__button" type="submit">Отправить</button>
@@ -61,6 +65,5 @@
             </form>
         </div>
     </main> 
-    <script src="script.js"></script>    
 </body>
 </html>
