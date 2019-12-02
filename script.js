@@ -12,54 +12,61 @@ const regexUrl = /^(http(s)?:\/\/)(w{3}\.)?(\d*\.\d*\.\d*\.\d*)?(([A-Za-z\.-]{2,
 form.addEventListener('input', event => {
     if (event.target.closest('.form__input')) {
         let valueName = event.target.getAttribute('name');
-        if (valueName === 'name') {
-            event.target.setAttribute('pattern', `${regexName}`);
-            if (nameInput.value.match(regexName) !== null) {
-                event.target.classList.add('form__inp');
-                event.target.nextElementSibling.classList.remove('form__in');
-                event.target.classList.remove('form__in');
-            } else {
-                event.target.classList.add('form__in');
-                event.target.nextElementSibling.classList.add('form__in');
-                event.target.nextElementSibling.classList.remove('form__inp');
-                event.preventDefault();
-            }
-        } else if (valueName === 'email') {
-            event.target.setAttribute('pattern', `${regexEmail}`);
-            if (emailInput.value.match(regexEmail) !== null) {
-                event.target.classList.add('form__inp');
-                event.target.nextElementSibling.classList.remove('form__in');
-                event.target.classList.remove('form__in');
-            } else {
-                event.target.classList.add('form__in');
-                event.target.nextElementSibling.classList.add('form__in');
-                event.target.nextElementSibling.classList.remove('form__inp');
-                event.preventDefault();
-            }
-        } else if (valueName === 'tel') {
-            event.target.setAttribute('pattern', `${regexTel}`);
-            if (telInput.value.match(regexTel) !== null) {
-                event.target.classList.add('form__inp');
-                event.target.nextElementSibling.classList.remove('form__in');
-                event.target.classList.remove('form__in');
-            } else {
-                event.target.classList.add('form__in');
-                event.target.nextElementSibling.classList.add('form__in');
-                event.target.nextElementSibling.classList.remove('form__inp');
-                event.preventDefault();
-            }
-        } else if (valueName === 'url') {
-            event.target.setAttribute('pattern', `${regexUrl}`);
-            if (urlInput.value.match(regexUrl) !== null) {
-                event.target.classList.add('form__inp');
-                event.target.nextElementSibling.classList.remove('form__in');
-                event.target.classList.remove('form__in');
-            } else {
-                event.target.classList.add('form__in');
-                event.target.nextElementSibling.classList.add('form__in');
-                event.target.nextElementSibling.classList.remove('form__inp');
-                event.preventDefault();
-            }
-        } 
+
+        switch (valueName) {
+            case 'name':
+                event.target.setAttribute('pattern', `${regexName}`);
+                    if (nameInput.value.match(regexName) !== null) {
+                        event.target.classList.add('form__inp');
+                        event.target.nextElementSibling.classList.remove('form__in');
+                        event.target.classList.remove('form__in');
+                    } else {
+                        event.target.classList.add('form__in');
+                        event.target.nextElementSibling.classList.add('form__in');
+                        event.target.nextElementSibling.classList.remove('form__inp');
+                        event.preventDefault();
+                    }
+                break;
+            case 'email':
+                event.target.setAttribute('pattern', `${regexEmail}`);
+                    if (emailInput.value.match(regexEmail) !== null) {
+                        event.target.classList.add('form__inp');
+                        event.target.nextElementSibling.classList.remove('form__in');
+                        event.target.classList.remove('form__in');
+                    } else {
+                        event.target.classList.add('form__in');
+                        event.target.nextElementSibling.classList.add('form__in');
+                        event.target.nextElementSibling.classList.remove('form__inp');
+                        event.preventDefault();
+                    }
+                break;
+            case 'tel':
+                event.target.setAttribute('pattern', `${regexTel}`);
+                    if (telInput.value.match(regexTel) !== null) {
+                        event.target.classList.add('form__inp');
+                        event.target.nextElementSibling.classList.remove('form__in');
+                        event.target.classList.remove('form__in');
+                    } else {
+                        event.target.classList.add('form__in');
+                        event.target.nextElementSibling.classList.add('form__in');
+                        event.target.nextElementSibling.classList.remove('form__inp');
+                        event.preventDefault();
+                    }   
+                break;
+            case 'url':
+                event.target.setAttribute('pattern', `${regexUrl}`);
+                    if (urlInput.value.match(regexUrl) !== null) {
+                        event.target.classList.add('form__inp');
+                        event.target.nextElementSibling.classList.remove('form__in');
+                        event.target.classList.remove('form__in');
+                    } else {
+                        event.target.classList.add('form__in');
+                        event.target.nextElementSibling.classList.add('form__in');
+                        event.target.nextElementSibling.classList.remove('form__inp');
+                        event.preventDefault();
+                    }
+                break;
+        }
+        
     }
 });
