@@ -115,14 +115,11 @@ html {
 	color: #000;
 }
 
-.form__input:valid:not(:placeholder-shown) {
+.form__inp {
 	border-color: #ffdb4d;
 }
 
-.form__input:invalid:not(:placeholder-shown) {
-	border-color: #df4b41;
-}
-
-.form__input:invalid:not(:placeholder-shown) + .form__error {
+.form__in {
+    border-color: #df4b41;
 	display: block;
 }
