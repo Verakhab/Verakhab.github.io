@@ -9,6 +9,11 @@ const regexEmail = /^([\dA-Za-z\.-]{2,})+@([A-Za-z\.-]{2,})+\.([A-Za-z]{2,6})$/;
 const regexTel = /^(\+)?(\d)\s?(\()?(\d{3})(\))?\s?-?(\d{3})\s?-?(\d{2})\s?-?(\d{2})$/;
 const regexUrl = /^(http(s)?:\/\/)(w{3}\.)?(\d*\.\d*\.\d*\.\d*)?(([A-Za-z\.-]{2,})\.([A-Za-z]{2,6}))?(:\d{2,5})?\/?([\dA-Za-z\/]+#?)?$/;
 
+document.querySelector('.form__button').
+setAttribute('disabled', `disabled`);
+document.querySelector('.form__button').
+setAttribute('style', `background-color: #aba9a9;`);
+
 form.addEventListener('input', event => {
     if (event.target.closest('.form__input')) {
         let valueName = event.target.getAttribute('name');
@@ -67,6 +72,22 @@ form.addEventListener('input', event => {
                     }
                 break;
         }
-        
     }
+    if ((nameInput.value.match(regexName) && emailInput.value.match(regexEmail) && 
+        telInput.value.match(regexTel) && urlInput.value.match(regexUrl)) !== null) {
+        document.querySelector('.form__button').
+        removeAttribute('disabled');
+        document.querySelector('.form__button').
+        removeAttribute('style');
+    } else {
+        document.querySelector('.form__button').
+        setAttribute('disabled', `disabled`);
+        document.querySelector('.form__button').
+        setAttribute('style', `background-color: #aba9a9;`);
+    }
+});
+
+document.querySelector('.form__button').
+addEventListener('click', () => {
+    form.reset();
 });
