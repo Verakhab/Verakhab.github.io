@@ -2,7 +2,7 @@
 
 Github: https://github.com/Verakhab/Verakhab.github.io
 
-gh-pages: https://verakhab.github.io/Verakhab.github.io/
+gh-pages: https://verakhab.github.io/
 
 Project work #10
 
