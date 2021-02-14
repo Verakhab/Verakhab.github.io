@@ -88,6 +88,7 @@ form.addEventListener('input', event => {
 });
 
 document.querySelector('.form__button').
-addEventListener('click', () => {
+addEventListener('click', event => {
+    event.preventDefault();
     form.reset();
 });
